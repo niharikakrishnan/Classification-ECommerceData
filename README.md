@@ -14,7 +14,11 @@
 4. Implemented Seaborn plots based on examples from descriptive statistics course
 
 #### Week 3
-1. Read about correlation techniques - Pearson and Kendall. Plotted the same. 
-Inference - Negative Correlation between X-Features and the predicted value in Y
-2. Converted TimeStamp to DateTime followed by separating Year, Month, Day and Hour for bucketizing
-3. Read about Azure ML Services - https://www.youtube.com/watch?v=Eb7kyOJe5Kc
+1. Read about correlation techniques - Pearson, Kendall. Plotted the same - cmap
+Inference - High correlation between CutomerID and Country
+2. However, since dataset has categorical values - Chi-Square and ANOVA may be a better fit (Still reading and implementing)
+3. After correlation with and without null values of CustomerID - Better to retain null CustomerID values
+4. 25% null customer ID but on;y 5.2% amount spent by null customerID customers
+5. For data impuning, if in one invoice number, there are fields with missing customerID, then it can be manipulated. However, intersection gives an empty list. Thus, cannot append values to null CustomerID
+6. Converted TimeStamp to DateTime followed by separating Year, Month, Day and Hour for bucketizing
+7. Read about Azure ML Services - https://www.youtube.com/watch?v=Eb7kyOJe5Kc
