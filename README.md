@@ -18,7 +18,14 @@
 2. Read about correlation techniques - Pearson, Spearman, Kendall. Plotted the same - cmap
 Inference from Pearson - Positive correlation between CutomerID, Month, Quantity and Country, Negative correlation w.r.t Description (Probable due to numerous cat.codes) 
 3. Reading about if Chi-Sqaure, ANOVA tests can give inference
-3. After correlation with and without null values of CustomerID - Better to retain null CustomerID values since higher correlation
-4. 25% null customer ID but only 5.2 % items purchased and 14.92% amount spent by null customerID customers.
-5. For data imputing, if in one invoice number, we have null and not null customerID, then it can be manipulated. However, intersection gives an empty list. Thus, cannot append values to null CustomerID
-6. Read about Azure ML Services - https://www.youtube.com/watch?v=Eb7kyOJe5Kc
+4. After correlation with and without null values of CustomerID - Better to retain null CustomerID values since higher correlation
+5. 25% null customer ID but only 5.2 % items purchased and 14.92% amount spent by null customerID customers.
+6. For data imputing, if in one invoice number, we have null and not null customerID, then it can be manipulated. However, intersection gives an empty list. Thus, cannot append values to null CustomerID
+7. Read about Azure ML Services - https://www.youtube.com/watch?v=Eb7kyOJe5Kc
+
+#### Week 4
+1. Performed feature wise exploratory data analysis
+2. Removed the outliers in quantity and unit price
+3. One hot encoding of predicted variable (y)
+4. Label encoding of description feature
+5. Implemented Random forest and logistic regression
