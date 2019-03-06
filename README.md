@@ -29,3 +29,16 @@ Inference from Pearson - Positive correlation between CutomerID, Month, Quantity
 3. One hot encoding of predicted variable (y)
 4. Label encoding of description feature
 5. Implemented Random forest and logistic regression
+
+#### Week 5
+1. Hyperparameter Tuning of ML algorithms implemented in Week 3 & 4
+2. Implemented SGD algorithm along with Logistic Regression
+3. Grid search for hyperparameter tuning and K-Fold cross validation
+4. Further EDA of X features
+
+#### Week 6
+1. Created Azure ML Workspace
+2. Free 30 days trial starts for Azure ML
+3. Mainly prepared for TCS Xplore Mid Sem Assessment on Mar 2
+
+#### Week 7
