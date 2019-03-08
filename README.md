@@ -42,3 +42,9 @@ Inference from Pearson - Positive correlation between CutomerID, Month, Quantity
 3. Mainly prepared for TCS Xplore Mid Sem Assessment on Mar 2
 
 #### Week 7
+1. Creation of workspace, experiments, trial runs, metrics
+2. Performed simple experiments to check how metrics are logged
+3. Azure Blob Storage vs Azure File Storage vs Block Blob vs AppendBlob
+4. Lot of deprecated packages in Azure - versions differ. Read about each and experimented with the same. 
+5. Data can also be fetched by the url inside the container of the storage account. 
+6. Latest - Data.csv stored in blob and retrieved
