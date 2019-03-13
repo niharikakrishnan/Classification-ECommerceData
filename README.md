@@ -48,3 +48,11 @@ Inference from Pearson - Positive correlation between CutomerID, Month, Quantity
 4. Lot of deprecated packages in Azure - versions differ. Read about each and experimented with the same. 
 5. Data can also be fetched by the url inside the container of the storage account. 
 6. Latest - Data.csv stored in blob and retrieved
+
+#### Week 8
+1. Transfering all code to Azure Notebook
+2. File uploaded to storage account
+3. Experimenting 3 types of training - Local Machine, Withink notebook, Remote Server
+Local Machine - Done
+Within Notebook - Done
+Remote Server - In Progress
