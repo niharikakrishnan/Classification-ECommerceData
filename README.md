@@ -1,5 +1,9 @@
 # Classification-ECommerceData
 
+Please find below the link for azure notebooks:
+https://notebooks.azure.com/niharikakrishnan/projects/classification-ecommerce
+
+
 #### Week 1
 1. Started Andrew Ng course - Completed till Week 2
 2. Read about classification problems, multi-class classification w.r.t e-commerce dataset
