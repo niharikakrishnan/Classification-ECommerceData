@@ -1,0 +1,354 @@
+2019/03/25 10:35:18 Using acb_vol_3e1f94f3-fe9d-4c48-abcd-b84e7f429ea0 as the home volume
+2019/03/25 10:35:18 Creating Docker network: acb_default_network, driver: 'bridge'
+2019/03/25 10:35:19 Successfully set up Docker network: acb_default_network
+2019/03/25 10:35:19 Setting up Docker configuration...
+2019/03/25 10:35:20 Successfully set up Docker configuration
+2019/03/25 10:35:20 Logging in to registry: ecommercews4852086199.azurecr.io
+2019/03/25 10:35:21 Successfully logged into ecommercews4852086199.azurecr.io
+2019/03/25 10:35:21 Executing step ID: acb_step_0. Working directory: '', Network: 'acb_default_network'
+2019/03/25 10:35:21 Obtaining source code and scanning for dependencies...
+2019/03/25 10:35:21 Successfully obtained source code and scanned for dependencies
+2019/03/25 10:35:21 Launching container with name: acb_step_0
+Sending build context to Docker daemon  5.632kB
+Step 1/14 : FROM mcr.microsoft.com/azureml/o16n-base/python-slim:latest.eastus
+latest.eastus: Pulling from azureml/o16n-base/python-slim
+34667c7e4631: Pulling fs layer
+d18d76a881a4: Pulling fs layer
+119c7358fbfc: Pulling fs layer
+2aaf13f3eff0: Pulling fs layer
+ebee3acfe5f8: Pulling fs layer
+f1f8a3179de9: Pulling fs layer
+e2708e9272c8: Pulling fs layer
+86f12b43bbde: Pulling fs layer
+d42d4740972c: Pulling fs layer
+b0637736d3fc: Pulling fs layer
+87582614fd5f: Pulling fs layer
+2fde867d1e76: Pulling fs layer
+de73a999c2ef: Pulling fs layer
+21ed813e29eb: Pulling fs layer
+0f12b310aa15: Pulling fs layer
+ad30af77e02c: Pulling fs layer
+0b1f3d4e46be: Pulling fs layer
+57fe889a0c64: Pulling fs layer
+7f452c7ffa8c: Pulling fs layer
+a73c043dd645: Pulling fs layer
+2aaf13f3eff0: Waiting
+ebee3acfe5f8: Waiting
+f1f8a3179de9: Waiting
+e2708e9272c8: Waiting
+86f12b43bbde: Waiting
+d42d4740972c: Waiting
+b0637736d3fc: Waiting
+87582614fd5f: Waiting
+2fde867d1e76: Waiting
+de73a999c2ef: Waiting
+21ed813e29eb: Waiting
+0f12b310aa15: Waiting
+ad30af77e02c: Waiting
+0b1f3d4e46be: Waiting
+57fe889a0c64: Waiting
+7f452c7ffa8c: Waiting
+a73c043dd645: Waiting
+d18d76a881a4: Verifying Checksum
+d18d76a881a4: Download complete
+119c7358fbfc: Verifying Checksum
+119c7358fbfc: Download complete
+2aaf13f3eff0: Verifying Checksum
+2aaf13f3eff0: Download complete
+f1f8a3179de9: Verifying Checksum
+f1f8a3179de9: Download complete
+e2708e9272c8: Verifying Checksum
+e2708e9272c8: Download complete
+34667c7e4631: Verifying Checksum
+34667c7e4631: Download complete
+d42d4740972c: Verifying Checksum
+d42d4740972c: Download complete
+ebee3acfe5f8: Verifying Checksum
+ebee3acfe5f8: Download complete
+86f12b43bbde: Verifying Checksum
+86f12b43bbde: Download complete
+b0637736d3fc: Verifying Checksum
+b0637736d3fc: Download complete
+2fde867d1e76: Verifying Checksum
+2fde867d1e76: Download complete
+de73a999c2ef: Verifying Checksum
+de73a999c2ef: Download complete
+21ed813e29eb: Verifying Checksum
+21ed813e29eb: Download complete
+ad30af77e02c: Verifying Checksum
+ad30af77e02c: Download complete
+0f12b310aa15: Verifying Checksum
+0f12b310aa15: Download complete
+87582614fd5f: Verifying Checksum
+87582614fd5f: Download complete
+57fe889a0c64: Verifying Checksum
+57fe889a0c64: Download complete
+0b1f3d4e46be: Verifying Checksum
+0b1f3d4e46be: Download complete
+7f452c7ffa8c: Verifying Checksum
+7f452c7ffa8c: Download complete
+a73c043dd645: Verifying Checksum
+a73c043dd645: Download complete
+34667c7e4631: Pull complete
+d18d76a881a4: Pull complete
+119c7358fbfc: Pull complete
+2aaf13f3eff0: Pull complete
+ebee3acfe5f8: Pull complete
+f1f8a3179de9: Pull complete
+e2708e9272c8: Pull complete
+86f12b43bbde: Pull complete
+d42d4740972c: Pull complete
+b0637736d3fc: Pull complete
+87582614fd5f: Pull complete
+2fde867d1e76: Pull complete
+de73a999c2ef: Pull complete
+21ed813e29eb: Pull complete
+0f12b310aa15: Pull complete
+ad30af77e02c: Pull complete
+0b1f3d4e46be: Pull complete
+57fe889a0c64: Pull complete
+7f452c7ffa8c: Pull complete
+a73c043dd645: Pull complete
+Digest: sha256:e4fe5c9b0190b1c90dad4a3b14be7f1745a6d813cd55324923f095c8a0dd654f
+Status: Downloaded newer image for mcr.microsoft.com/azureml/o16n-base/python-slim:latest.eastus
+ ---> 77c0a9c54836
+Step 2/14 : RUN mkdir -p '/var/azureml-app' && /var/azureml-util/download_asset.sh 'https://ecommercews3975002265.blob.core.windows.net/azureml/LocalUpload/573df431/tmpdgptyrfu.py?sv=2018-03-28&sr=b&sig=Mt0GFCoXNUh8amj4nRO66sD0e3FgxYwDmn4r1%2FtwQCE%3D&st=2019-03-25T10:25:15Z&se=2019-03-25T18:35:15Z&sp=r' '/var/azureml-app/tmpdgptyrfu.py'
+ ---> Running in 4d882494b4a5
+Downloading https://ecommercews3975002265.blob.core.windows.net/azureml/LocalUpload/573df431/tmpdgptyrfu.py?sv=2018-03-28&sr=b&sig=Mt0GFCoXNUh8amj4nRO66sD0e3FgxYwDmn4r1%2FtwQCE%3D&st=2019-03-25T10:25:15Z&se=2019-03-25T18:35:15Z&sp=r as /var/azureml-app/tmpdgptyrfu.py
+[91m--2019-03-25 10:35:38--  https://ecommercews3975002265.blob.core.windows.net/azureml/LocalUpload/573df431/tmpdgptyrfu.py?sv=2018-03-28&sr=b&sig=Mt0GFCoXNUh8amj4nRO66sD0e3FgxYwDmn4r1%2FtwQCE%3D&st=2019-03-25T10:25:15Z&se=2019-03-25T18:35:15Z&sp=r
+[0m[91mResolving ecommercews3975002265.blob.core.windows.net (ecommercews3975002265.blob.core.windows.net)... [0m[91m52.226.8.148
+Connecting to ecommercews3975002265.blob.core.windows.net (ecommercews3975002265.blob.core.windows.net)|52.226.8.148|:443... [0m[91mconnected.
+[0m[91mHTTP request sent, awaiting response... [0m[91m200 OK
+Length: 3209 (3.1K) [application/octet-stream]
+[0m[91mSaving to: ‘/var/azureml-app/tmpdgptyrfu.py’
+
+     0K                                    100%  326M=0s
+
+[0m[91m2019-03-25 10:35:38 (326 MB/s) - ‘/var/azureml-app/tmpdgptyrfu.py’ saved [3209/3209]
+
+[0mRemoving intermediate container 4d882494b4a5
+ ---> 9fb85391b0b6
+Step 3/14 : RUN mkdir -p '/var/azureml-app' && /var/azureml-util/download_asset.sh 'https://ecommercews3975002265.blob.core.windows.net/azureml/LocalUpload/3b42a67d/071fab08.tar.gz?sv=2018-03-28&sr=b&sig=v9teinQZS2F08z20bLeaDdYVFgxRxSAEbayb605JSKM%3D&st=2019-03-25T10:25:15Z&se=2019-03-25T18:35:15Z&sp=r' /tmp/temp.tar.gz && tar xzf /tmp/temp.tar.gz -C '/var/azureml-app' && rm -f /tmp/temp.tar.gz
+ ---> Running in e726b5363ffa
+Downloading https://ecommercews3975002265.blob.core.windows.net/azureml/LocalUpload/3b42a67d/071fab08.tar.gz?sv=2018-03-28&sr=b&sig=v9teinQZS2F08z20bLeaDdYVFgxRxSAEbayb605JSKM%3D&st=2019-03-25T10:25:15Z&se=2019-03-25T18:35:15Z&sp=r as /tmp/temp.tar.gz
+[91m--2019-03-25 10:35:39--  https://ecommercews3975002265.blob.core.windows.net/azureml/LocalUpload/3b42a67d/071fab08.tar.gz?sv=2018-03-28&sr=b&sig=v9teinQZS2F08z20bLeaDdYVFgxRxSAEbayb605JSKM%3D&st=2019-03-25T10:25:15Z&se=2019-03-25T18:35:15Z&sp=r
+[0m[91mResolving ecommercews3975002265.blob.core.windows.net (ecommercews3975002265.blob.core.windows.net)... [0m[91m52.226.8.148
+Connecting to ecommercews3975002265.blob.core.windows.net (ecommercews3975002265.blob.core.windows.net)|52.226.8.148|:443... [0m[91mconnected.
+[0m[91mHTTP request sent, awaiting response... [0m[91m200 OK
+Length: 806 [application/octet-stream]
+Saving to: ‘/tmp/temp.tar.gz’
+[0m[91m
+     0K                                    [0m[91m100% 89.4M=0s
+
+2019-03-25 10:35:39 (89.4 MB/s) - ‘/tmp/temp.tar.gz’ saved [806/806]
+
+[0mRemoving intermediate container e726b5363ffa
+ ---> dc74bd8e3c44
+Step 4/14 : RUN mkdir -p '/var/azureml-app' && /var/azureml-util/download_asset.sh 'https://ecommercews3975002265.blob.core.windows.net/azureml/LocalUpload/13d1726c/77a069bf.tar.gz?sv=2018-03-28&sr=b&sig=Mvax5Y99B0w7RnIsJkz%2FnOb8jeBvwhWlIIiVR4mk7Yg%3D&st=2019-03-25T10:25:15Z&se=2019-03-25T18:35:15Z&sp=r' /tmp/temp.tar.gz && tar xzf /tmp/temp.tar.gz -C '/var/azureml-app' && rm -f /tmp/temp.tar.gz
+ ---> Running in d730ec19594c
+Downloading https://ecommercews3975002265.blob.core.windows.net/azureml/LocalUpload/13d1726c/77a069bf.tar.gz?sv=2018-03-28&sr=b&sig=Mvax5Y99B0w7RnIsJkz%2FnOb8jeBvwhWlIIiVR4mk7Yg%3D&st=2019-03-25T10:25:15Z&se=2019-03-25T18:35:15Z&sp=r as /tmp/temp.tar.gz
+[91m--2019-03-25 10:35:41--  https://ecommercews3975002265.blob.core.windows.net/azureml/LocalUpload/13d1726c/77a069bf.tar.gz?sv=2018-03-28&sr=b&sig=Mvax5Y99B0w7RnIsJkz%2FnOb8jeBvwhWlIIiVR4mk7Yg%3D&st=2019-03-25T10:25:15Z&se=2019-03-25T18:35:15Z&sp=r
+Resolving ecommercews3975002265.blob.core.windows.net (ecommercews3975002265.blob.core.windows.net)... [0m[91m52.226.8.148
+Connecting to ecommercews3975002265.blob.core.windows.net (ecommercews3975002265.blob.core.windows.net)|52.226.8.148|:443... [0m[91mconnected.
+[0m[91mHTTP request sent, awaiting response... [0m[91m200 OK
+Length: 806 [application/octet-stream]
+Saving to: ‘/tmp/temp.tar.gz’
+[0m[91m
+     0K                                    100% 89.4M=0s
+
+2019-03-25 10:35:41 (89.4 MB/s) - ‘/tmp/temp.tar.gz’ saved [806/806]
+
+[0mRemoving intermediate container d730ec19594c
+ ---> 4c469346364e
+Step 5/14 : RUN mkdir -p '/var/azureml-app' && /var/azureml-util/download_asset.sh 'https://ecommercews3975002265.blob.core.windows.net/azureml/LocalUpload/2834cc64/c4fa43f4.tar.gz?sv=2018-03-28&sr=b&sig=%2BISKL8pm4Z3JIC75pJJtIXEkx34%2Fa2xPCU%2BzRob7ar4%3D&st=2019-03-25T10:25:15Z&se=2019-03-25T18:35:15Z&sp=r' /tmp/temp.tar.gz && tar xzf /tmp/temp.tar.gz -C '/var/azureml-app' && rm -f /tmp/temp.tar.gz
+ ---> Running in 52f7e7133300
+Downloading https://ecommercews3975002265.blob.core.windows.net/azureml/LocalUpload/2834cc64/c4fa43f4.tar.gz?sv=2018-03-28&sr=b&sig=%2BISKL8pm4Z3JIC75pJJtIXEkx34%2Fa2xPCU%2BzRob7ar4%3D&st=2019-03-25T10:25:15Z&se=2019-03-25T18:35:15Z&sp=r as /tmp/temp.tar.gz
+[91m--2019-03-25 10:35:42--  https://ecommercews3975002265.blob.core.windows.net/azureml/LocalUpload/2834cc64/c4fa43f4.tar.gz?sv=2018-03-28&sr=b&sig=%2BISKL8pm4Z3JIC75pJJtIXEkx34%2Fa2xPCU%2BzRob7ar4%3D&st=2019-03-25T10:25:15Z&se=2019-03-25T18:35:15Z&sp=r
+[0m[91mResolving ecommercews3975002265.blob.core.windows.net (ecommercews3975002265.blob.core.windows.net)... [0m[91m52.226.8.148
+Connecting to ecommercews3975002265.blob.core.windows.net (ecommercews3975002265.blob.core.windows.net)|52.226.8.148|:443... connected.
+[0m[91mHTTP request sent, awaiting response... [0m[91m200 OK
+Length: 806 [application/octet-stream]
+Saving to: ‘/tmp/temp.tar.gz’
+[0m[91m
+     0K                                    100% 92.6M=0s
+
+2019-03-25 10:35:42 (92.6 MB/s) - ‘/tmp/temp.tar.gz’ saved [806/806]
+
+[0mRemoving intermediate container 52f7e7133300
+ ---> f2a5310f8d99
+Step 6/14 : RUN mkdir -p '/var/azureml-app/./azureml-models/latest_model/1' && /var/azureml-util/download_asset.sh 'https://ecommercews3975002265.blob.core.windows.net/azureml/LocalUpload/190325T103050-e1dd0367/latest_model.tar.gz?sv=2018-03-28&sr=b&sig=pcr9AS%2BfOsLd%2B1nDSymkSprZRO7PzVaH5%2Buhu8adsok%3D&st=2019-03-25T10:25:15Z&se=2019-03-25T18:35:15Z&sp=r' /tmp/temp.tar.gz && tar xzf /tmp/temp.tar.gz -C '/var/azureml-app/./azureml-models/latest_model/1' && rm -f /tmp/temp.tar.gz
+ ---> Running in d8c053594176
+Downloading https://ecommercews3975002265.blob.core.windows.net/azureml/LocalUpload/190325T103050-e1dd0367/latest_model.tar.gz?sv=2018-03-28&sr=b&sig=pcr9AS%2BfOsLd%2B1nDSymkSprZRO7PzVaH5%2Buhu8adsok%3D&st=2019-03-25T10:25:15Z&se=2019-03-25T18:35:15Z&sp=r as /tmp/temp.tar.gz
+[91m--2019-03-25 10:35:44--  https://ecommercews3975002265.blob.core.windows.net/azureml/LocalUpload/190325T103050-e1dd0367/latest_model.tar.gz?sv=2018-03-28&sr=b&sig=pcr9AS%2BfOsLd%2B1nDSymkSprZRO7PzVaH5%2Buhu8adsok%3D&st=2019-03-25T10:25:15Z&se=2019-03-25T18:35:15Z&sp=r
+[0m[91mResolving ecommercews3975002265.blob.core.windows.net (ecommercews3975002265.blob.core.windows.net)... [0m[91m52.226.8.148
+Connecting to ecommercews3975002265.blob.core.windows.net (ecommercews3975002265.blob.core.windows.net)|52.226.8.148|:443... [0m[91mconnected.
+[0m[91mHTTP request sent, awaiting response... [0m[91m200 OK
+Length: 26757 (26K) [application/octet-stream]
+Saving to: ‘/tmp/temp.tar.gz’
+[0m[91m
+     0K                                    100% 33.6M=0.001s
+
+2019-03-25 10:35:44 (33.6 MB/s) - ‘/tmp/temp.tar.gz’ saved [26757/26757]
+
+[0mRemoving intermediate container d8c053594176
+ ---> 9e7562d1f3ac
+Step 7/14 : RUN mkdir -p '/var/azureml-app' && /var/azureml-util/download_asset.sh 'https://ecommercews3975002265.blob.core.windows.net/azureml/LocalUpload/01964b5f/requirementsrvrdb28a.txt?sv=2018-03-28&sr=b&sig=hcWwa%2F4K%2BzEg5oMUDQ3uFnNPJuC6u0svgDgothw2yb8%3D&st=2019-03-25T10:25:15Z&se=2019-03-25T18:35:15Z&sp=r' '/var/azureml-app/requirementsrvrdb28a.txt'
+ ---> Running in 1adabc2f9326
+Downloading https://ecommercews3975002265.blob.core.windows.net/azureml/LocalUpload/01964b5f/requirementsrvrdb28a.txt?sv=2018-03-28&sr=b&sig=hcWwa%2F4K%2BzEg5oMUDQ3uFnNPJuC6u0svgDgothw2yb8%3D&st=2019-03-25T10:25:15Z&se=2019-03-25T18:35:15Z&sp=r as /var/azureml-app/requirementsrvrdb28a.txt
+[91m--2019-03-25 10:35:45--  https://ecommercews3975002265.blob.core.windows.net/azureml/LocalUpload/01964b5f/requirementsrvrdb28a.txt?sv=2018-03-28&sr=b&sig=hcWwa%2F4K%2BzEg5oMUDQ3uFnNPJuC6u0svgDgothw2yb8%3D&st=2019-03-25T10:25:15Z&se=2019-03-25T18:35:15Z&sp=r
+Resolving ecommercews3975002265.blob.core.windows.net (ecommercews3975002265.blob.core.windows.net)... [0m[91m52.226.8.148
+Connecting to ecommercews3975002265.blob.core.windows.net (ecommercews3975002265.blob.core.windows.net)|52.226.8.148|:443... [0m[91mconnected.
+[0m[91mHTTP request sent, awaiting response... [0m[91m200 OK
+Length: 43 [application/octet-stream]
+Saving to: ‘/var/azureml-app/requirementsrvrdb28a.txt’
+[0m[91m
+     0K                                    100% 4.77M=0s
+
+2019-03-25 10:35:45 (4.77 MB/s) - ‘/var/azureml-app/requirementsrvrdb28a.txt’ saved [43/43]
+
+[0mRemoving intermediate container 1adabc2f9326
+ ---> 989c30a2aa21
+Step 8/14 : RUN mkdir -p '/var/azureml-app' && /var/azureml-util/download_asset.sh 'https://ecommercews3975002265.blob.core.windows.net/azureml/LocalUpload/6845d76e/myenv.yml?sv=2018-03-28&sr=b&sig=Q7OQ25awochCvuXayAbIup1e7m0cJIqYOLei4cy6xmU%3D&st=2019-03-25T10:25:15Z&se=2019-03-25T18:35:15Z&sp=r' '/var/azureml-app/myenv.yml'
+ ---> Running in b4a2f1258728
+Downloading https://ecommercews3975002265.blob.core.windows.net/azureml/LocalUpload/6845d76e/myenv.yml?sv=2018-03-28&sr=b&sig=Q7OQ25awochCvuXayAbIup1e7m0cJIqYOLei4cy6xmU%3D&st=2019-03-25T10:25:15Z&se=2019-03-25T18:35:15Z&sp=r as /var/azureml-app/myenv.yml
+[91m--2019-03-25 10:35:47--  https://ecommercews3975002265.blob.core.windows.net/azureml/LocalUpload/6845d76e/myenv.yml?sv=2018-03-28&sr=b&sig=Q7OQ25awochCvuXayAbIup1e7m0cJIqYOLei4cy6xmU%3D&st=2019-03-25T10:25:15Z&se=2019-03-25T18:35:15Z&sp=r
+[0m[91mResolving ecommercews3975002265.blob.core.windows.net (ecommercews3975002265.blob.core.windows.net)... [0m[91m52.226.8.148
+Connecting to ecommercews3975002265.blob.core.windows.net (ecommercews3975002265.blob.core.windows.net)|52.226.8.148|:443... [0m[91mconnected.
+[0m[91mHTTP request sent, awaiting response... [0m[91m200 OK
+Length: 496 [application/octet-stream]
+Saving to: ‘/var/azureml-app/myenv.yml’
+[0m[91m
+     0K                                    100% 55.6M=0s
+
+2019-03-25 10:35:47 (55.6 MB/s) - ‘/var/azureml-app/myenv.yml’ saved [496/496]
+
+[0mRemoving intermediate container b4a2f1258728
+ ---> 7158f25672b5
+Step 9/14 : RUN mkdir -p '/var/azureml-app' && /var/azureml-util/download_asset.sh 'https://modelmgmteastus.blob.core.windows.net/1f76623a-f600-408b-83db-5afe1d229e74/model_config_map.json?sv=2017-04-17&sr=b&sig=Yj0aZDlA3bYlvR6mQt7UVjzR7m4UjPJyzJiTszhhW0k%3D&st=2019-03-25T10:30:15Z&se=2020-03-24T10:35:15Z&sp=r' '/var/azureml-app/model_config_map.json'
+ ---> Running in 6afb3aad7a57
+[91m--2019-03-25 10:35:49--  https://modelmgmteastus.blob.core.windows.net/1f76623a-f600-408b-83db-5afe1d229e74/model_config_map.json?sv=2017-04-17&sr=b&sig=Yj0aZDlA3bYlvR6mQt7UVjzR7m4UjPJyzJiTszhhW0k%3D&st=2019-03-25T10:30:15Z&se=2020-03-24T10:35:15Z&sp=r
+Resolving modelmgmteastus.blob.core.windows.net (modelmgmteastus.blob.core.windows.net)... [0mDownloading https://modelmgmteastus.blob.core.windows.net/1f76623a-f600-408b-83db-5afe1d229e74/model_config_map.json?sv=2017-04-17&sr=b&sig=Yj0aZDlA3bYlvR6mQt7UVjzR7m4UjPJyzJiTszhhW0k%3D&st=2019-03-25T10:30:15Z&se=2020-03-24T10:35:15Z&sp=r as /var/azureml-app/model_config_map.json
+[91m52.239.220.32
+Connecting to modelmgmteastus.blob.core.windows.net (modelmgmteastus.blob.core.windows.net)|52.239.220.32|:443... [0m[91mconnected.
+[0m[91mHTTP request sent, awaiting response... [0m[91m200 OK
+Length: 203 [application/octet-stream]
+Saving to: ‘/var/azureml-app/model_config_map.json’
+[0m[91m
+     0K                                    100% 22.5M=0s
+
+2019-03-25 10:35:49 (22.5 MB/s) - ‘/var/azureml-app/model_config_map.json’ saved [203/203]
+
+[0mRemoving intermediate container 6afb3aad7a57
+ ---> e9d75c75beff
+Step 10/14 : RUN mv '/var/azureml-app/tmpdgptyrfu.py' /var/azureml-app/main.py
+ ---> Running in 4f3789acea8e
+Removing intermediate container 4f3789acea8e
+ ---> 0fd0e9062f87
+Step 11/14 : RUN sed -i '/^\s*-\s*python\s*[<>=]/d' '/var/azureml-app/myenv.yml' && cat '/var/azureml-app/myenv.yml'
+ ---> Running in 6b8bc23d3901
+from azureml.core.conda_dependencies import CondaDependencies 
+
+myenv = CondaDependencies()
+myenv.add_conda_package("scikit-learn")
+myenv.add_conda_package("matplotlib")
+myenv.add_conda_package("pandas")
+myenv.add_conda_package("numpy")
+myenv.add_conda_package("seaborn")
+myenv.add_conda_package("nltk")
+myenv.add_conda_package("jinja2")
+myenv.add_conda_package("os")
+
+
+with open("myenv.yml","w") as f:
+    f.write(myenv.serialize_to_string())
+with open("myenv.yml","r") as f:
+    print(f.read())Removing intermediate container 6b8bc23d3901
+ ---> 9e1f30bdacff
+Step 12/14 : RUN CONDA_ROOT_DIR=$(conda info --root) && if [ -n "$AZUREML_CONDA_ENVIRONMENT_PATH" ]; then conda env update -p "$AZUREML_CONDA_ENVIRONMENT_PATH" -f '/var/azureml-app/myenv.yml'; else conda env update -n base -f '/var/azureml-app/myenv.yml'; fi && conda clean -aqy && rm -rf /root/.cache/pip && rm -rf "$CONDA_ROOT_DIR/pkgs" && find "$CONDA_ROOT_DIR" -type d -name __pycache__ -exec rm -rf {} +
+ ---> Running in 590a18df81cb
+[91m
+# >>>>>>>>>>>>>>>>>>>>>> ERROR REPORT <<<<<<<<<<<<<<<<<<<<<<
+
+    Traceback (most recent call last):
+      File "/opt/miniconda/lib/python3.6/site-packages/conda/exceptions.py", line 1002, in __call__
+        return func(*args, **kwargs)
+      File "/opt/miniconda/lib/python3.6/site-packages/conda_env/cli/main.py", line 73, in do_call
+        exit_code = getattr(module, func_name)(args, parser)
+      File "/opt/miniconda/lib/python3.6/site-packages/conda_env/cli/main_update.py", line 69, in execute
+        directory=os.getcwd())
+      File "/opt/miniconda/lib/python3.6/site-packages/conda_env/specs/__init__.py", line 40, in detect
+        if spec.can_handle():
+      File "/opt/miniconda/lib/python3.6/site-packages/conda_env/specs/yaml_file.py", line 18, in can_handle
+        self._environment = env.from_file(self.filename)
+      File "/opt/miniconda/lib/python3.6/site-packages/conda_env/env.py", line 131, in from_file
+        return from_yaml(yamlstr, filename=filename)
+      File "/opt/miniconda/lib/python3.6/site-packages/conda_env/env.py", line 116, in from_yaml
+        data = yaml_load_standard(yamlstr)
+      File "/opt/miniconda/lib/python3.6/site-packages/conda/common/serialize.py", line 76, in yaml_load_standard
+        return yaml.load(string, Loader=yaml.Loader, version="1.2")
+      File "/opt/miniconda/lib/python3.6/site-packages/ruamel_yaml/main.py", line 640, in load
+        return loader._constructor.get_single_data()  # type: ignore
+      File "/opt/miniconda/lib/python3.6/site-packages/ruamel_yaml/constructor.py", line 102, in get_single_data
+        node = self.composer.get_single_node()
+      File "/opt/miniconda/lib/python3.6/site-packages/ruamel_yaml/composer.py", line 75, in get_single_node
+        document = self.compose_document()
+      File "/opt/miniconda/lib/python3.6/site-packages/ruamel_yaml/composer.py", line 99, in compose_document
+        self.parser.get_event()
+      File "/opt/miniconda/lib/python3.6/site-packages/ruamel_yaml/parser.py", line 166, in get_event
+        self.current_event = self.state()
+      File "/opt/miniconda/lib/python3.6/site-packages/ruamel_yaml/parser.py", line 244, in parse_document_end
+        token = self.scanner.peek_token()
+      File "/opt/miniconda/lib/python3.6/site-packages/ruamel_yaml/scanner.py", line 173, in peek_token
+        self.fetch_more_tokens()
+      File "/opt/miniconda/lib/python3.6/site-packages/ruamel_yaml/scanner.py", line 273, in fetch_more_tokens
+        return self.fetch_value()
+      File "/opt/miniconda/lib/python3.6/site-packages/ruamel_yaml/scanner.py", line 626, in fetch_value
+        self.reader.get_mark())
+    ruamel_yaml.scanner.ScannerError: mapping values are not allowed here
+      in "<unicode string>", line 14, column 32:
+        with open("myenv.yml","w") as f:
+                                       ^ (line: 14)
+
+`$ /opt/miniconda/bin/conda-env update -n base -f /var/azureml-app/myenv.yml`
+
+  environment variables:
+                 CIO_TEST=<not set>
+  CONDA_AUTO_UPDATE_CONDA=false
+               CONDA_ROOT=/opt/miniconda
+           CONDA_ROOT_DIR=/opt/miniconda
+                     PATH=/opt/miniconda/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/
+                          sbin:/bin
+       REQUESTS_CA_BUNDLE=<not set>
+            SSL_CERT_FILE=<not set>
+
+     active environment : None
+       user config file : /root/.condarc
+ populated config files : 
+          conda version : 4.6.8
+    conda-build version : not installed
+         python version : 3.6.8.final.0
+       base environment : /opt/miniconda  (writable)
+           channel URLs : https://repo.anaconda.com/pkgs/main/linux-64
+                          https://repo.anaconda.com/pkgs/main/noarch
+                          https://repo.anaconda.com/pkgs/free/linux-64
+                          https://repo.anaconda.com/pkgs/free/noarch
+                          https://repo.anaconda.com/pkgs/r/linux-64
+                          https://repo.anaconda.com/pkgs/r/noarch
+          package cache : /opt/miniconda/pkgs
+                          /root/.conda/pkgs
+       envs directories : /opt/miniconda/envs
+                          /root/.conda/envs
+               platform : linux-64
+             user-agent : conda/4.6.8 requests/2.21.0 CPython/3.6.8 Linux/4.13.0-1018-azure ubuntu/16.04.6 glibc/2.23
+                UID:GID : 0:0
+             netrc file : None
+           offline mode : False
+
+
+An unexpected error has occurred. Conda has prepared the above report.
+
+[0mThe command '/bin/sh -c CONDA_ROOT_DIR=$(conda info --root) && if [ -n "$AZUREML_CONDA_ENVIRONMENT_PATH" ]; then conda env update -p "$AZUREML_CONDA_ENVIRONMENT_PATH" -f '/var/azureml-app/myenv.yml'; else conda env update -n base -f '/var/azureml-app/myenv.yml'; fi && conda clean -aqy && rm -rf /root/.cache/pip && rm -rf "$CONDA_ROOT_DIR/pkgs" && find "$CONDA_ROOT_DIR" -type d -name __pycache__ -exec rm -rf {} +' returned a non-zero code: 1
+2019/03/25 10:35:55 Container failed during run: acb_step_0. No retries remaining.
+failed to run step ID: acb_step_0: exit status 1
+
+Run ID: cag failed after 40s
