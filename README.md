@@ -4,6 +4,9 @@ Please find below the link for azure notebooks:
 
 https://notebooks.azure.com/niharikakrishnan/projects/classification-ecommerce
 
+Open issue on github: https://github.com/conda/conda/issues/8180
+Apparently it is a bug with Conda.
+
 
 #### Week 1
 1. Started Andrew Ng course - Completed till Week 2
