@@ -4,9 +4,8 @@ Please find below the link for azure notebooks:
 
 https://notebooks.azure.com/niharikakrishnan/projects/classification-ecommerce
 
-Open issue on github: https://github.com/conda/conda/issues/8180
-Apparently it is a bug with Conda.
-
+Raised an issue with Azure support since the technical chat support representative coouldn't rectify the error.
+https://social.msdn.microsoft.com/Forums/en-US/e27b3da2-eb91-4116-be99-0b88a41a1bc5/image-creation-fails-while-using-azure-container-instances-in-azure-machine-leaning-service?forum=MachineLearning
 
 #### Week 1
 1. Started Andrew Ng course - Completed till Week 2
