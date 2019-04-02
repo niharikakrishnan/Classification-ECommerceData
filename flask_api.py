@@ -78,11 +78,11 @@ def result():
 
     	if result in country:
     		prediction = country[result]
-    		return render_template("result.html", prediction = prediction)
+    		return render_template("index.html", prediction = prediction)
 
     	else:
     		prediction = "Not found"
-    		return render_template("result.html", prediction = prediction)
+    		return render_template("index.html", prediction = prediction)
 
 
 if __name__ == '__main__':
