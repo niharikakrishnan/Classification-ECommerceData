@@ -4,10 +4,6 @@ Please find below the link for azure notebooks:
 
 https://notebooks.azure.com/niharikakrishnan/projects/classification-ecommerce
 
-Raised an issue with Azure support since the technical chat support representative couldn't rectify the error.
-Status Update: Resolved
-https://social.msdn.microsoft.com/Forums/en-US/e27b3da2-eb91-4116-be99-0b88a41a1bc5/image-creation-fails-while-using-azure-container-instances-in-azure-machine-leaning-service?forum=MachineLearning
-
 #### Week 1
 1. Started Andrew Ng course - Completed till Week 2
 2. Read about classification problems, multi-class classification w.r.t e-commerce dataset
@@ -67,14 +63,21 @@ Remote Server - In Progress
 
 #### Week 9
 1. ML Model Registered
-2. Scoring script created - Lot of bugs/issues
-3. 
+2. Environment file created
+3. Scoring script created - Lot of bugs/issues
+4. Configuration file created
+5. AKS didn't allow to create VM with the required configuration. Shifted to Azure Container Instances.
 
 
 #### Week 10
-1. conda_dependencies.yml file created
+1. Raised an issue with Azure support since the technical chat support representative couldn't rectify the error.
+Status Update: Resolved
+https://social.msdn.microsoft.com/Forums/en-US/e27b3da2-eb91-4116-be99-0b88a41a1bc5/image-creation-fails-while-using-azure-container-instances-in-azure-machine-leaning-service?forum=MachineLearning
+2. Conda_dependencies.yml created
+3. Image regsitered and scoring_uri created. 
 
 
 #### Week 11
-1. HTML Front end created
+1. HTML Front end and result
 2. Flask Script added
+3. Successful implementation of accessing the ML URL from within the Azure notebook/other local machine.
