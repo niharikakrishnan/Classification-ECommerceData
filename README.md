@@ -4,7 +4,8 @@ Please find below the link for azure notebooks:
 
 https://notebooks.azure.com/niharikakrishnan/projects/classification-ecommerce
 
-Raised an issue with Azure support since the technical chat support representative coouldn't rectify the error.
+Raised an issue with Azure support since the technical chat support representative couldn't rectify the error.
+Status Update: Resolved
 https://social.msdn.microsoft.com/Forums/en-US/e27b3da2-eb91-4116-be99-0b88a41a1bc5/image-creation-fails-while-using-azure-container-instances-in-azure-machine-leaning-service?forum=MachineLearning
 
 #### Week 1
@@ -63,3 +64,17 @@ Inference from Pearson - Positive correlation between CutomerID, Month, Quantity
 Local Machine - Done
 Within Notebook - Done
 Remote Server - In Progress
+
+#### Week 9
+1. ML Model Registered
+2. Scoring script created - Lot of bugs/issues
+3. 
+
+
+#### Week 10
+1. conda_dependencies.yml file created
+
+
+#### Week 11
+1. HTML Front end created
+2. Flask Script added
