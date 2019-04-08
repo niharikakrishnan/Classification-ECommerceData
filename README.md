@@ -91,3 +91,4 @@ https://social.msdn.microsoft.com/Forums/en-US/e27b3da2-eb91-4116-be99-0b88a41a1
 2. Learnt basices of flask to connect the HTML code with Python backend
 3. Flask script created that takes user input and calls the ML url. 
 4. Successfully hit the ML url to receive the prediction of a customer's origin based on user input.
+5. Preparation of TCS Xplore Final Sem Assessment on April 5th
