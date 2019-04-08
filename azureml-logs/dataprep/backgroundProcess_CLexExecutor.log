@@ -1,4 +1,0 @@
-2019-03-07 12:08:21.8421|DEBUG|CLexExecutor|ExecuteLariatScriptAsync|Start Execution|{"Id":"ed5a4b59-9cb7-4333-8ce3-a55da4562bc4"}|97c4e6e2-40a3-11e9-a0ce-4c3488ea64a0
-2019-03-07 12:08:21.8485|DEBUG|CLexExecutor|ExecuteLariatScriptAsync|End Execution (Success)|{"Id":"ed5a4b59-9cb7-4333-8ce3-a55da4562bc4"}|97c4e6e2-40a3-11e9-a0ce-4c3488ea64a0
-2019-03-07 12:08:40.8137|DEBUG|CLexExecutor|ExecuteLariatScriptAsync|Start Execution|{"Id":"e9bc21ec-11d0-4163-99c4-92142d00f12a"}|97c4e6e2-40a3-11e9-a0ce-4c3488ea64a0
-2019-03-07 12:08:40.8137|DEBUG|CLexExecutor|ExecuteLariatScriptAsync|End Execution (Success)|{"Id":"e9bc21ec-11d0-4163-99c4-92142d00f12a"}|97c4e6e2-40a3-11e9-a0ce-4c3488ea64a0
