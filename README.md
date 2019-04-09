@@ -23,6 +23,10 @@ https://notebooks.azure.com/niharikakrishnan/projects/classification-ecommerce
 3. Implemented Seaborn plots based on examples from descriptive statistics course
 4. Outliers detected and removed 
 
+![preprocess_1](https://github.com/niharikakrishnan/Classification-ECommerceData/blob/master/Azure%20Portal%20Images/preprocess_2.png)
+
+![preprocess_2](https://github.com/niharikakrishnan/Classification-ECommerceData/blob/master/Azure%20Portal%20Images/preprocess_1.png)
+
 #### Week 3
 1. Converted TimeStamp to DateTime followed by separating Year, Month, Day and Hour for bucketizing
 2. Read about correlation techniques - Pearson, Spearman, Kendall. Plotted the same - cmap
