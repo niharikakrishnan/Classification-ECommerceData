@@ -105,6 +105,7 @@ https://social.msdn.microsoft.com/Forums/en-US/e27b3da2-eb91-4116-be99-0b88a41a1
 
 ## Output Images
 
+![output](https://github.com/niharikakrishnan/Classification-ECommerceData/blob/master/Web%20Frontend%20Images/output.png)
 
 
 ## Online Courses
