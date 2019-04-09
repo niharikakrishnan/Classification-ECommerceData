@@ -27,8 +27,6 @@ https://notebooks.azure.com/niharikakrishnan/projects/classification-ecommerce
 
 ![preprocess_1](https://github.com/niharikakrishnan/Classification-ECommerceData/blob/master/Azure%20Portal%20Images/preprocess_2.png)
 
-![preprocess_2](https://github.com/niharikakrishnan/Classification-ECommerceData/blob/master/Azure%20Portal%20Images/preprocess_1.png)
-
 #### Week 3
 1. Converted TimeStamp to DateTime followed by separating Year, Month, Day and Hour for bucketizing
 2. Read about correlation techniques - Pearson, Spearman, Kendall. Plotted the same - cmap
@@ -39,6 +37,8 @@ Inference from Pearson - Positive correlation between CutomerID, Month, Quantity
 6. For data imputing, if in one invoice number, we have null and not null customerID, then it can be manipulated. However, intersection gives an empty list. Thus, cannot append values to null CustomerID
 7. Read about Azure ML Services - https://www.youtube.com/watch?v=Eb7kyOJe5Kc
 
+![preprocess_2](https://github.com/niharikakrishnan/Classification-ECommerceData/blob/master/Azure%20Portal%20Images/preprocess_1.png)
+
 
 ### Machine Learning Models
 #### Week 4
@@ -48,12 +48,72 @@ Inference from Pearson - Positive correlation between CutomerID, Month, Quantity
 4. Label encoding of description feature - Total unique description is 4700+
 5. Implemented Random forest and logistic regression and checked how the model accuracy varies with a change in the parameters
 
+``` python
+  #K-NN
+  testaccuracy=[]
+  neighbours=[1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,50]
+  for value in neighbours:
+      start = time.time()
+      knn_model = KNeighborsClassifier(n_neighbors = value)
+      knn_model.fit(X_train_onehot, y_train_onehot)
+      y_knn_pred = knn_model.predict(X_test_onehot)
+      y_classes_pred = y_knn_pred.argmax(axis=-1)
+      y_classes_test = y_test_onehot.argmax(axis=-1)
+      knn_test_accuracy = metrics.accuracy_score(y_classes_test, y_classes_pred)
+      testaccuracy.append(knn_test_accuracy)
+      end = time.time()
+      print(value, " --> ", knn_test_accuracy, " --> ", end-start)
+ ```
+ ``` python
+  #Decision Tree
+  testaccuracy=[]
+  depth=[1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 30]
+
+  for value in depth:
+      start = time.time()
+      decision_model = DecisionTreeClassifier(max_depth = value)
+      decision_model.fit(X_train_onehot, y_train_onehot) 
+      y_decision_pred = decision_model.predict(X_test_onehot)
+      y_classes_pred = y_decision_pred.argmax(axis=-1)
+      y_classes_test = y_test_onehot.argmax(axis=-1)
+      decision_test_accuracy = metrics.accuracy_score(y_classes_test, y_classes_pred)
+      testaccuracy.append(decision_test_accuracy)
+      end = time.time()
+      print(value, " --> ", decision_test_accuracy, " --> ", end-start)
+   ```
+
 #### Week 5
 1. Hyperparameter Tuning of ML algorithms implemented in Week 3 & 4
 2. Implemented Stochastic Gradient Descent algorithm along with Logistic Regression
 3. Read about Random Search vs Grid Search for hyperparameter tuning
 4. Cross Validation Techniques explored and implemented - K-Fold, Leave One-out. LOOCV was time consuming due to huge volume of dataset
 5. Individual Exploratory Data Analysis of features in the X_train dataset
+
+``` python
+numFolds = 5
+  kf = KFold(numFolds, shuffle=True, random_state=0)
+
+  Models = [LogisticRegression, SGDClassifier]
+  params = [{}, {"loss": "log", "penalty": "l2", 'n_iter':100}]
+
+  i=0
+  plot_accuracy=[[],[]]
+  for param, Model in zip(params, Models):
+      total = 0
+      for train_index, test_index in kf.split(X):
+          X_train, X_test = X.iloc[train_index], X.iloc[test_index]
+          y_train, y_test = Y_list[train_index], Y_list[test_index]
+          reg = Model(**param)
+          reg.fit(X_train, y_train)
+          predictions = reg.predict(X_test)
+          accuracy = metrics.accuracy_score(y_test, predictions)
+          print(accuracy)
+          total+=accuracy
+          plot_accuracy[i].append(accuracy)
+      accuracy = total / numFolds
+      print("Accuracy score of {0}: {1}".format(Model.__name__, accuracy))
+      i=i+1
+```
 
 #### Week 6
 1. Finalized train.py file consisting of ML model
@@ -130,6 +190,8 @@ Hence, took decision to transfer the code to Azure Notebooks (Consists of pre-in
 5. Data can be retrieved from cloud using - Blob storage vs URL
 6. Latest - Data.csv stored in blob and accessed
 
+![Azure ML](https://github.com/niharikakrishnan/Classification-ECommerceData/blob/master/Azure%20Portal%20Images/resource.png)
+
 #### Week 8
 1. Transfering all code to Azure Notebook
 2. Compute resourcces created (Azure Virtual Machine - Standard D2 V2)
@@ -146,7 +208,7 @@ Remote Server - Done
 1. Estimator created - Submission of run. 
 2. ML Model trained within notebook using Compute Target. Run successful after 15-20 failed runs.
 3. ML Model registered. Training cluster deleted
-4. Scoring script created - COnsists of functions that get called from the frontend
+4. Scoring script created - Consists of functions that get called from the frontend
 5. Create environment file - Compiled but issue major issue while deploying (Error in Azure tutorial - Resolved next week)
 6. AKS didn't allow to create VM with the required configuration. Shifted to Azure Container Instances.
 
