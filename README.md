@@ -50,10 +50,69 @@ Inference from Pearson - Positive correlation between CutomerID, Month, Quantity
 5. Individual Exploratory Data Analysis of features in the X_train dataset
 
 #### Week 6
-1. Created Azure ML Workspace - Containers, Storage Account, etc
-2. Free 30 days trial starts for Azure Machine Learning Service 
-3. Preparation of TCS Xplore Mid Sem Assessment on Mar 2
+1. Finalized train.py file consisting of ML model
+2. Created Azure ML Workspace - Containers, Storage Account, etc
+3. Free 30 days trial starts for Azure Machine Learning Service 
+4. Preparation of TCS Xplore Mid Sem Assessment on Mar 2
 
+``` python
+parser = argparse.ArgumentParser()
+parser.add_argument('--data-folder', type=str, dest='data_folder', help='data folder mounting point')
+args = parser.parse_args()
+data_folder = args.data_folder
+
+from azureml.core import Run
+run = Run.get_context()
+
+# Load comma separated value dataset. File should be present in the same directory else path must be sent as an argument
+filepath = os.path.join(data_folder, 'data.csv')
+df = pd.read_csv(filepath, encoding = 'ISO-8859-1')
+
+df.InvoiceDate = pd.to_datetime(df.InvoiceDate, format="%m/%d/%Y %H:%M")
+df['Year'] = df['InvoiceDate'].dt.year
+df['Month'] = df['InvoiceDate'].dt.month 
+df['Day'] = df['InvoiceDate'].dt.day 
+df['Hour'] = df['InvoiceDate'].dt.hour 
+df.drop(columns=['InvoiceDate'], inplace=True)
+df.drop_duplicates(keep='first', inplace=True)
+
+from sklearn.preprocessing import LabelBinarizer
+encoder = LabelBinarizer()
+country_one_hot = encoder.fit_transform(df['Country'])
+Y_onehot=country_one_hot
+
+from sklearn.preprocessing import LabelEncoder
+en = LabelEncoder()
+df["Description_Code"] = en.fit_transform(df["Description"])
+
+#Creating X_train dataset
+d = {'Description': df['Description_Code'], 'Quantity': df['Quantity'], 'Unit Price': df['UnitPrice'], 'Month': df['Month'], 'Day': df['Day'], 'Hour': df['Hour']}
+
+X=pd.DataFrame(d)
+
+from sklearn import metrics
+from sklearn.model_selection import train_test_split
+from sklearn.tree import DecisionTreeClassifier 
+
+#Splitting the dataset: 75% train, 25% test
+X_train_onehot, X_test_onehot, y_train_onehot, y_test_onehot = train_test_split(X, Y_onehot, random_state = 0)
+
+#Decision Tree
+decision_model = DecisionTreeClassifier(max_depth=7)
+decision_model.fit(X_train_onehot, y_train_onehot) 
+y_decision_pred = decision_model.predict(X_test_onehot)
+y_classes_pred = y_decision_pred.argmax(axis=-1)
+y_classes_test = y_test_onehot.argmax(axis=-1)
+decision_test_accuracy = metrics.accuracy_score(y_classes_test, y_classes_pred)
+print(decision_test_accuracy)
+
+run.log('Accuracy', decision_test_accuracy)
+
+from sklearn.externals import joblib
+os.makedirs('outputs', exist_ok=True)
+joblib.dump(value=decision_model, filename='outputs/test_model.pkl')
+run.complete()
+```
 
 ### Model Deployment using Microsoft Azure Machine Learning Service
 #### Week 7
@@ -146,6 +205,10 @@ https://social.msdn.microsoft.com/Forums/en-US/e27b3da2-eb91-4116-be99-0b88a41a1
 4. Major issues while calling score.py file. Made neccessary changes to file - Loads json data, converts description to correct code, extracts necessary values from time stamp field converted to X_train dataframe and sent as input to ML url as input.
 5. Output prediction received resulting in successful API generation.
 6. Machine Learning URL can be called from local machine, remote machine, different cluser etc.
+
+![aci_1](https://github.com/niharikakrishnan/Classification-ECommerceData/blob/master/Azure%20Portal%20Images/aci_1.png)
+
+![aci_2](https://github.com/niharikakrishnan/Classification-ECommerceData/blob/master/Azure%20Portal%20Images/aci_2.png)
 
 
 ### Flask and Front-end
