@@ -16,6 +16,8 @@ https://notebooks.azure.com/niharikakrishnan/projects/classification-ecommerce
 4. Added a new column "Total Price" for analysis of amount spent by each customer/country
 5. Used matplotlib for plotting analysis of total purchase vs country, mean amount vs country, total orders vs country 
 
+![dataset](https://github.com/niharikakrishnan/Classification-ECommerceData/blob/master/Azure%20Portal%20Images/dataset.png)
+
 
 #### Week 2
 1. Started with Descriptive Statistics Course - Completed till Week 3. Helped to understand various types of data and plots available to draw inferences
