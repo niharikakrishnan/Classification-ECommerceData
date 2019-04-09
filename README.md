@@ -1,9 +1,14 @@
-# Classification-ECommerceData
+# Multi-Class Classification of E-Commerce Data using Supervised Machine Learning Algorithms
 
-Please find below the link for azure notebooks:
+All code available in azure notebooks:
 
 https://notebooks.azure.com/niharikakrishnan/projects/classification-ecommerce
 
+
+## Week-wise Progress
+
+
+### Data Pre-processing
 #### Week 1
 1. Started Andrew Ng course - Completed till Week 2
 2. Read about classification problems, multi-class classification w.r.t e-commerce dataset
@@ -27,6 +32,8 @@ Inference from Pearson - Positive correlation between CutomerID, Month, Quantity
 6. For data imputing, if in one invoice number, we have null and not null customerID, then it can be manipulated. However, intersection gives an empty list. Thus, cannot append values to null CustomerID
 7. Read about Azure ML Services - https://www.youtube.com/watch?v=Eb7kyOJe5Kc
 
+
+### Machine Learning Models
 #### Week 4
 1. Performed feature wise exploratory data analysis using matplotlib and seaborn
 2. Removed the outliers in quantity and unit price - Most of the outliers were resulting in a skewed dataset hence decreasing the accuracy of the model
@@ -46,6 +53,8 @@ Inference from Pearson - Positive correlation between CutomerID, Month, Quantity
 2. Free 30 days trial starts for Azure Machine Learning Service 
 3. Preparation of TCS Xplore Mid Sem Assessment on Mar 2
 
+
+### Model Deployment using Microsoft Azure Machine Learning Service
 #### Week 7
 1. Creation of workspace, experiments, trial runs, metrics
 2. Performed simple experiments (using scikit-learn) to check how metrics are logged
@@ -86,9 +95,30 @@ https://social.msdn.microsoft.com/Forums/en-US/e27b3da2-eb91-4116-be99-0b88a41a1
 6. Machine Learning URL can be called from local machine, remote machine, different cluser etc.
 
 
+### Flask and Front-end
 #### Week 11 & 12
 1. Built basic front end using HTML and CSS
 2. Learnt basices of flask to connect the HTML code with Python backend
 3. Flask script created that takes user input and calls the ML url. 
 4. Successfully hit the ML url to receive the prediction of a customer's origin based on user input.
 5. Preparation of TCS Xplore Final Sem Assessment on April 5th
+
+## Output Images
+
+
+
+## Online Courses
+
+| Course Name  | Status |
+| ------------- | ------------- |
+| Descriptive Statistics  | Audited and Completed  |
+| Inferential Statistics  | Audited and Completed  |
+| Machine Learning by Andrew NG  | Week 5 / Week 11  |
+
+## External References
+1. Stack Overflow
+2. Github Issues
+3. Documentations
+4. Azure Technical Support
+5. Coursera
+6. Towards Data Science / Medium / Analytics Vidhya
