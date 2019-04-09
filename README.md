@@ -345,6 +345,10 @@ if __name__ == '__main__':
 ![output](https://github.com/niharikakrishnan/Classification-ECommerceData/blob/master/Web%20Frontend%20Images/output.png)
 
 
+## Issues
+1. Dataset very skewed for Customer Origin Classification Problem - 95% data point belong to United Kingdom
+2. Azure Kubernetes Service couldn't be implmented in Free Trial subscription. Hence shifted to Azure Container Instances
+
 ## Online Courses
 
 | Course Name  | Status |
@@ -358,6 +362,6 @@ if __name__ == '__main__':
 2. Github Issues
 3. Packages documentations / Microsoft Azure Docs & Tutorials
 4. Azure Technical Support
-5. Coursera/You Tube videos
+5. Coursera / YouTube videos
 6. Towards Data Science / Medium / Analytics Vidhya
 7. Kaggle
