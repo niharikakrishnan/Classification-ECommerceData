@@ -347,13 +347,20 @@ if __name__ == '__main__':
 
 ## Issues
 1. Dataset very skewed for Customer Origin Classification Problem - 95% data point belong to United Kingdom
+
+*Solution:* Sampling
+ - Simple Random Sampling
+ - Stratified Sampling
+ - Cluster Sampling
+ - Multistage Sampling
+ 
 2. Azure Kubernetes Service couldn't be implmented in Free Trial subscription. Hence shifted to Azure Container Instances
 
 ## Online Courses
 
 | Course Name  | Status |
 | ------------- | ------------- |
-| Descriptive Statistics  | Audited: Week 4 / Week 5 |
+| Descriptive Statistics| Audited: Week 4 / Week 5 |
 | Inferential Statistics  | Audited: Week 4 / Week 5  |
 | Machine Learning by Andrew NG  | Audited: Week 5 / Week 11  |
 
