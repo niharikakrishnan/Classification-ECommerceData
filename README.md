@@ -116,10 +116,33 @@ numFolds = 5
 ```
 
 #### Week 6
-1. Finalized train.py file consisting of ML model
-2. Created Azure ML Workspace - Containers, Storage Account, etc
-3. Free 30 days trial starts for Azure Machine Learning Service 
-4. Preparation of TCS Xplore Mid Sem Assessment on Mar 2
+1. Created Azure ML Workspace - Containers, Storage Account, etc
+2. Free 30 days trial starts for Azure Machine Learning Service 
+3. Preparation of TCS Xplore Mid Sem Assessment on Mar 2
+
+### Model Deployment using Microsoft Azure Machine Learning Service
+#### Week 7
+1. Creation of workspace, experiments, trial runs, metrics
+2. Performed simple experiments (using scikit-learn) to check how metrics are logged
+3. Azure Blob Storage vs Azure File Storage vs Block Blob vs AppendBlob - Proceeded with Blob storage
+4. Lot of deprecated packages in Azure - versions differ while importing Azure ML SDK to local python code 
+Hence, took decision to transfer the code to Azure Notebooks (Consists of pre-installed Azure ML packages)
+5. Data can be retrieved from cloud using - Blob storage vs URL
+6. Latest - Data.csv stored in blob and accessed
+
+![Azure ML](https://github.com/niharikakrishnan/Classification-ECommerceData/blob/master/Azure%20Portal%20Images/resource.png)
+
+#### Week 8
+1. Transfering all code to Azure Notebook
+2. Compute resourcces created (Azure Virtual Machine - Standard D2 V2)
+3. Dataset uploaded to blob storage account
+4. Experimenting 3 types of training  the model - Local Machine, Withink notebook, Remote Server
+Local Machine - Done
+Within Notebook - Done
+Remote Server - Done
+5. Proceeded with Decision Tree Model with depth 7 as final model due to highest accuracy and least processing time
+6. Created a separate train.py consisting of only necessary preprocessing and training model
+7. Model saved as .pkl file
 
 ``` python
 parser = argparse.ArgumentParser()
@@ -179,30 +202,6 @@ os.makedirs('outputs', exist_ok=True)
 joblib.dump(value=decision_model, filename='outputs/test_model.pkl')
 run.complete()
 ```
-
-### Model Deployment using Microsoft Azure Machine Learning Service
-#### Week 7
-1. Creation of workspace, experiments, trial runs, metrics
-2. Performed simple experiments (using scikit-learn) to check how metrics are logged
-3. Azure Blob Storage vs Azure File Storage vs Block Blob vs AppendBlob - Proceeded with Blob storage
-4. Lot of deprecated packages in Azure - versions differ while importing Azure ML SDK to local python code 
-Hence, took decision to transfer the code to Azure Notebooks (Consists of pre-installed Azure ML packages)
-5. Data can be retrieved from cloud using - Blob storage vs URL
-6. Latest - Data.csv stored in blob and accessed
-
-![Azure ML](https://github.com/niharikakrishnan/Classification-ECommerceData/blob/master/Azure%20Portal%20Images/resource.png)
-
-#### Week 8
-1. Transfering all code to Azure Notebook
-2. Compute resourcces created (Azure Virtual Machine - Standard D2 V2)
-3. Dataset uploaded to blob storage account
-4. Experimenting 3 types of training  the model - Local Machine, Withink notebook, Remote Server
-Local Machine - Done
-Within Notebook - Done
-Remote Server - Done
-5. Proceeded with Decision Tree Model with depth 7 as final model due to highest accuracy and least processing time
-6. Created a separate train.py consisting of only necessary preprocessing and training model
-7. Model saved as .pkl file
 
 #### Week 9
 1. Estimator created - Submission of run. 
@@ -351,7 +350,8 @@ if __name__ == '__main__':
 ## External References
 1. Stack Overflow
 2. Github Issues
-3. Documentations
+3. Packages documentations / Microsoft Azure Docs & Tutorials
 4. Azure Technical Support
-5. Coursera
+5. Coursera/You Tube videos
 6. Towards Data Science / Medium / Analytics Vidhya
+7. Kaggle
