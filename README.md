@@ -4,6 +4,12 @@ All code available in azure notebooks:
 
 https://notebooks.azure.com/niharikakrishnan/projects/classification-ecommerce
 
+## Dataset
+This is a transnational data set which contains all the transactions occurring between 01/12/2010 and 09/12/2011 for a UK-based and registered non-store online retail.The company mainly sells unique all-occasion gifts. Many customers of the company are wholesalers.
+
+## Aim
+We aim to implement various classification algorithms like SVM, Logistic Regression, Naive Bayes, Random Forest, SGD, k-NN to predict a customer's origin and to compare the performance of these supervised machine learning models. To deploy the ML Model using Microsoft Azure Machine Learning Service.
+
 
 ## Week-wise Progress
 
@@ -343,9 +349,9 @@ if __name__ == '__main__':
 
 | Course Name  | Status |
 | ------------- | ------------- |
-| Descriptive Statistics  | Audited and Completed  |
-| Inferential Statistics  | Audited and Completed  |
-| Machine Learning by Andrew NG  | Week 5 / Week 11  |
+| Descriptive Statistics  | Audited: Week 4 / Week 5 |
+| Inferential Statistics  | Audited: Week 4 / Week 5  |
+| Machine Learning by Andrew NG  | Audited: Week 5 / Week 11  |
 
 ## External References
 1. Stack Overflow
