@@ -16,6 +16,7 @@ https://notebooks.azure.com/niharikakrishnan/projects/classification-ecommerce
 4. Added a new column "Total Price" for analysis of amount spent by each customer/country
 5. Used matplotlib for plotting analysis of total purchase vs country, mean amount vs country, total orders vs country 
 
+
 #### Week 2
 1. Started with Descriptive Statistics Course - Completed till Week 3. Helped to understand various types of data and plots available to draw inferences
 2. Read about multi-classification using K-NN, Decision Tree, Naive Bayes, SVM
@@ -84,6 +85,58 @@ Remote Server - Done
 5. Create environment file - Compiled but issue major issue while deploying (Error in Azure tutorial - Resolved next week)
 6. AKS didn't allow to create VM with the required configuration. Shifted to Azure Container Instances.
 
+``` python
+import json
+import numpy as np
+from sklearn.externals import joblib
+from azureml.core.model import Model
+
+# In[105]: #load the model
+def init():
+    global model
+    model_path = Model.get_model_path('test_model')
+    model = joblib.load(model_path)
+
+def run(dictdata):
+    des = {
+        'WHITE HANGING HEART T-LIGHT HOLDER': 3833, 'WHITE METAL LANTERN': 3841, 'CREAM CUPID HEARTS COAT HANGER': 885, 
+        'KNITTED UNION FLAG HOT WATER BOTTLE': 1850, 'RED WOOLLY HOTTIE WHITE HEART.': 2833, 'SET 7 BABUSHKA NESTING BOXES': 3080,
+        'GLASS STAR FROSTED T-LIGHT HOLDER': 1474 }
+    
+    data = json.loads(dictdata)
+    for i in range(len(data["data"])):
+        key=data["data"][i]['description']
+        timestamp = data["data"][i]['timestamp']
+        date = timestamp.split()[0]
+        time = timestamp.split()[1]
+        if '/' in date:
+            date=date.split('/')
+            data["data"][i]["month"] = date[0] 
+            data["data"][i]["day"] = date[1]
+            data["data"][i]["hour"] = time.split(':')[0] 
+            del data["data"][i]['timestamp']
+        elif '-' in date:
+            date = date.split('-')
+            data["data"][i]["month"] = date[0] 
+            data["data"][i]["day"] = date[1]
+            data["data"][i]["hour"] = time.split(':')[0]
+            del data["data"][i]['timestamp']
+
+        if key in des:
+            data["data"][i]['description']=des[key]
+        else:
+            print("Description not found")
+            
+    final_dict = {}
+    for i in range(len(data["data"])):
+        final_dict = data["data"][i]
+        arr = np.array([final_dict[key] for key in ('description', 'quantity', 'unitprice', 'month', 'day', 'hour')]).T
+        arr1 = np.reshape(arr, (-1, 6))
+        y_pred = model.predict(arr1)
+        y_class = y_pred.argmax(axis = -1)
+    return y_class.tolist()
+```
+
 #### Week 10
 1. Raised an issue with Azure support since the technical chat support representative couldn't rectify the error.
 Status Update: Resolved
@@ -98,10 +151,58 @@ https://social.msdn.microsoft.com/Forums/en-US/e27b3da2-eb91-4116-be99-0b88a41a1
 ### Flask and Front-end
 #### Week 11 & 12
 1. Built basic front end using HTML and CSS
-2. Learnt basices of flask to connect the HTML code with Python backend
+2. Learnt basics of flask to connect the HTML code with Python backend
 3. Flask script created that takes user input and calls the ML url. 
 4. Successfully hit the ML url to receive the prediction of a customer's origin based on user input.
 5. Preparation of TCS Xplore Final Sem Assessment on April 5th
+
+``` python 
+app = Flask(__name__)
+
+# to tell flask what url shoud trigger the function index()
+@app.route('/')
+@app.route('/index')
+def index():
+    return flask.render_template('index.html')
+
+# prediction function
+def ValuePredictor(jsondata):
+	headers = {'Content-Type': 'application/json'}
+	uri = "http://20.185.111.89:80/score"
+	resp = requests.post(uri, jsondata, headers = headers)
+	finalclass = int(resp.text.strip('[]'))
+	return finalclass
+
+@app.route('/result', methods = ['POST'])
+def result():
+    if request.method == 'POST':
+    	list1=[]
+    	description = request.form['description']
+    	quantity = request.form['quantity']
+    	unitprice = request.form['unitprice']
+    	timestamp = request.form['timestamp']
+    	dictionary = {"description": description, "quantity": quantity, "unitprice": unitprice, "timestamp": timestamp}
+    	list1.append(dictionary)
+    	final_dict = {"data": list1}
+    	jsondata = json.dumps(final_dict)
+    	result = ValuePredictor(jsondata)
+    	country = {
+      36: 'United Kingdom', 13: 'France', 0: 'Australia', 24: 'Netherlands', 14: 'Germany', 25: 'Norway', 10: 'EIRE', 
+      33: 'Switzerland', 31: 'Spain', 26: 'Poland', 27: 'Portugal', 19: 'Italy', 3: 'Belgium', 22: 'Lithuania', 20: 'Japan', 
+      17: 'Iceland', 6: 'Channel Islands', 9: 'Denmark', 7: 'Cyprus', 32: 'Sweden', 1: 'Austria', 18: 'Israel', 12: 'Finland', 
+      2: 'Bahrain', 15: 'Greece', 16: 'Hong Kong', 30: 'Singapore', 21: 'Lebanon', 35: 'United Arab Emirates', 29: 'Saudi Arabia', 
+      8: 'Czech Republic', 5: 'Canada', 37: 'Unspecified', 4: 'Brazil', 34: 'USA', 11: 'European Community', 23: 'Malta', 28: 'RSA'}
+
+    	if result in country:
+    		prediction = country[result]
+    		return render_template("index.html", prediction = prediction)
+    	else:
+    		prediction = "Not found"
+    		return render_template("index.html", prediction = prediction)
+
+if __name__ == '__main__':
+	app.run(debug = True, threaded=True) 
+  ```
 
 ## Output Images
 
