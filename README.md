@@ -124,7 +124,6 @@ numFolds = 5
 #### Week 6
 1. Created Azure ML Workspace - Containers, Storage Account, etc
 2. Free 30 days trial starts for Azure Machine Learning Service 
-3. Preparation of TCS Xplore Mid Sem Assessment on Mar 2
 
 ### Model Deployment using Microsoft Azure Machine Learning Service
 #### Week 7
@@ -290,7 +289,6 @@ https://social.msdn.microsoft.com/Forums/en-US/e27b3da2-eb91-4116-be99-0b88a41a1
 2. Learnt basics of flask to connect the HTML code with Python backend
 3. Flask script created that takes user input and calls the ML url. 
 4. Successfully hit the ML url to receive the prediction of a customer's origin based on user input.
-5. Preparation of TCS Xplore Final Sem Assessment on April 5th
 
 ``` python 
 app = Flask(__name__)
